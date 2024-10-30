@@ -1,0 +1,79 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eaf3f5;
+  height: 70px;
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+}
+.rightSection {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+}
+.facebookIcon svg {
+  height: 35px;
+  position: relative;
+  top: 1px;
+}
+.logoContainer img {
+  height: 50px;
+}
+.leftSection {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.rightSection a {
+  text-decoration: none;
+  font-size: 20px;
+  color: var(--primary-color);
+}
+.rightSection .active {
+  color: var(--secondary-color);
+}
+.donateContainer svg {
+  margin-left: 5px;
+  width: 28px;
+  position: relative;
+  top: -1px;
+}
+.donateContainer {
+  background-color: var(--primary-color);
+  border-radius: 100px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  height: 35px;
+  padding-left: 15px;
+  padding-right: 10px;
+  padding-top: 2px;
+  transition: 0.3s;
+  position: relative;
+  top: -1px;
+}
+.donateContainer:hover {
+  transition: 0.3s;
+  background-color: var(--secondary-color);
+}
+
+.mobileMenuContainer {
+  display: flex !important;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+}
+.mobileMenuContainer a {
+  color: white;
+  font-size: 30px;
+}

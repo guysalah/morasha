@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import RootLayout from "./Pages/Root";
+import HomePage, { loader as getSetting } from "./Pages/HomePage";
+import About from "./Pages/About";
+import Hills from "./Pages/Hills";
+import HillPage from "./Pages/HillPage";
+
+import Error from "./Pages/Error";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout />,
+    errorElement: <Error />,
+    children: [
+      // { index: true, element: <HomePage />, loader: getSetting },
+      { index: true, element: <HomePage /> },
+      { path: "/about", element: <About /> },
+      { path: "/hills", element: <Hills /> },
+      { path: "/hills/:hillId", element: <HillPage /> },
+      { path: "/gallery", element: <Hills /> },
+      { path: "/tour-scedual", element: <Hills /> },
+    ],
+  },
+]);
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

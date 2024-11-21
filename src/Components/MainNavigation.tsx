@@ -5,6 +5,7 @@ import clientConfig from "../clientConfig";
 import { useSelector, useDispatch } from "react-redux";
 import { mainSettingActions } from "../store/MainSetting";
 import { slide as Menu } from "react-burger-menu";
+import { useIsMobile } from "../utils/utils";
 
 interface NavItemProps {
   to: string;
@@ -14,7 +15,9 @@ interface NavItemProps {
 const NavItem: React.FC<NavItemProps> = ({ to, title, closeMenu }) => {
   return (
     <NavLink
-      className={({ isActive }) => (isActive ? classes.active + ' prevent-select' : 'prevent-select')}
+      className={({ isActive }) =>
+        isActive ? classes.active + " prevent-select" : "prevent-select"
+      }
       to={to}
       onClick={closeMenu}
     >
@@ -28,8 +31,11 @@ function MainNavigation() {
 
   const dispatch = useDispatch();
   const siteLang = clientConfig.siteLang;
-  const logoUrl = useSelector(
-    (state: { links: { logo: string } }) => state.links.logo
+  const logoVerticalUrl = useSelector(
+    (state: { links: { logoVertical: string } }) => state.links.logoVertical
+  );
+  const logoHorizontalUrl = useSelector(
+    (state: { links: { logoHorizontal: string } }) => state.links.logoHorizontal
   );
 
   const handleOnClose = () => {
@@ -40,10 +46,7 @@ function MainNavigation() {
     setMenuIsOpen(true);
   };
 
-  const isMobile = useSelector(
-    (state: { mainSetting: { isMobile: boolean } }) =>
-      state.mainSetting.isMobile
-  );
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     dispatch(mainSettingActions.updateIsMobile());
@@ -243,7 +246,7 @@ function MainNavigation() {
       width: "36px",
       height: "30px",
       left: "15px",
-      top: "21px",
+      top: "20px",
     },
     bmBurgerBars: {
       background: clientConfig.primaryColor,
@@ -279,16 +282,18 @@ function MainNavigation() {
     },
     bmOverlay: {
       background: "rgb(234 243 245 / 80%)",
+      zIndex:'1001'
     },
   };
 
   const navItems = (
     <>
-      <NavItem closeMenu={handleOnClose} to="/" title="עמוד הבית" />
+      {/* <NavItem closeMenu={handleOnClose} to="/" title="עמוד הבית" /> */}
       <NavItem closeMenu={handleOnClose} to="/about" title="אדות" />
       <NavItem closeMenu={handleOnClose} to="/hills" title="גבעות" />
       <NavItem closeMenu={handleOnClose} to="/gallery" title="גלריה" />
       <NavItem closeMenu={handleOnClose} to="/tour-scedual" title="תאום סיור" />
+      <NavItem closeMenu={handleOnClose} to="/contact" title="צור קשר" />
     </>
   );
 
@@ -312,9 +317,13 @@ function MainNavigation() {
       >
         <nav>
           <div className={classes.rightSection}>
-            <div className={classes.logoContainer}>
-              <img src={logoUrl} />
-            </div>
+            <Link to="/" className={classes.logoContainer}>
+              <img
+                className={classes.logo}
+                style={{ height: isMobile ? "60px" : "40px" }}
+                src={isMobile ? logoVerticalUrl : logoHorizontalUrl}
+              />
+            </Link>
             {isMobile ? undefined : navItems}
           </div>
           <div
@@ -330,7 +339,7 @@ function MainNavigation() {
             </Link>
             <Link to="/" className={classes.donateContainer}>
               {handsIcon}
-              תרומה למורשה
+              {isMobile ? "תרומה" : "תרומה למורשה"}
             </Link>
           </div>
         </nav>

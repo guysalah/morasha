@@ -1,0 +1,154 @@
+.mainContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+}
+
+.topImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: aqua;
+}
+
+.topImage img {
+  width: 100vw;
+}
+
+.Section1 {
+  width: 100vw;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.qute {
+  direction: rtl;
+  font-family: "Noto Serif Hebrew", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  color: white;
+  font-size: 1.8em;
+  line-height: 1.3em;
+  text-align: center;
+}
+.bodyText {
+  margin-top: 10px;
+  font-size: 1.5em;
+  direction: rtl;
+  text-align: center;
+  color: white;
+}
+/* section1 pics */
+.pic2 {
+  width: 200px;
+  left: 3vw;
+  top: -150px;
+}
+.pic3 {
+  width: 200px;
+  left: 20vw;
+  bottom: -100px;
+}
+.pic4 {
+  width: 350px;
+  right: 17vw;
+  bottom: -150px;
+}
+.pic5 {
+  width: 150px;
+  right: 10vw;
+  top: -100px;
+}
+
+.Section2 {
+  width: 100vw;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 1730px) and (min-width: 1201px) {
+  .pic4 {
+    width: 350px;
+    right: 2svw;
+    bottom: -150px;
+  }
+  .pic3 {
+    width: 180px;
+    left: 17vw;
+    bottom: -150px;
+  }
+}
+@media (max-width: 1200px) and (min-width: 769px) {
+  .pic4 {
+    width: 300px;
+    right: 2svw;
+    bottom: -150px;
+  }
+  .pic3 {
+    width: 180px;
+    left: 5vw;
+    bottom: -150px;
+  }
+  .pic2 {
+    width: 130px;
+    left: 1vw;
+    top: -100px;
+  }
+  .pic5 {
+    width: 130px;
+    right: 3vw;
+    top: -50px;
+  }
+}
+@media (max-width: 768px) {
+  .qute,
+  .bodyText {
+    width: 90%;
+  }
+  .Section1 {
+    justify-content: flex-start;
+    padding-top: 40px;
+  }
+  .pic4 {
+    width: 180px;
+    right: 5vw;
+    bottom: -80px;
+  }
+  .pic3 {
+    width: 130px;
+    left: 5vw;
+    bottom: -150px;
+  }
+  .pic2 {
+    display: none;
+  }
+  .pic5 {
+    display: none;
+  }
+}
+/* @media (min-width: 1301px) {
+}
+
+
+
+@media (max-width: 575px) and (min-width: 381px) {
+}
+
+@media (max-width: 380px) {
+} */

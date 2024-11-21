@@ -22,15 +22,15 @@
   height: 35px;
   position: relative;
   top: 1px;
+  width: auto;
 }
-.logoContainer img {
-  height: 50px;
-}
+
 .leftSection {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 20px;
+  gap: 15px;
+  /* background-color: aquamarine; */
 }
 .rightSection a {
   text-decoration: none;
@@ -77,3 +77,37 @@
   color: white;
   font-size: 30px;
 }
+
+@media (max-width: 900px) and (min-width: 769px) {
+  .rightSection {
+    gap: 16px;
+  }
+  .leftSection {
+    gap: 10px;
+  }
+  .logo {
+    margin-left: 5px;
+  }
+  .donateContainer svg {
+    margin-left: 5px;
+    width: 20px;
+    position: relative;
+    top: -1px;
+  }
+  .donateContainer {
+    font-size: 16px;
+    height: 30px;
+  }
+}
+
+/* @media (min-width: 1301px) {
+}
+
+@media (max-width: 768px) and (min-width: 576px) {
+}
+
+@media (max-width: 575px) and (min-width: 381px) {
+}
+
+@media (max-width: 380px) {
+} */

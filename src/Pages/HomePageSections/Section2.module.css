@@ -1,0 +1,103 @@
+.sction2 {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 50px;
+  position: relative;
+  overflow: hidden;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #ededed;
+}
+
+.section2Item {
+  width: 300px;
+  height: 300px;
+  max-width: 80vw;
+  padding: 20px;
+  padding-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.Icon {
+  position: absolute;
+  top: 50px;
+}
+.titleAndText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  top: -50px;
+  height: 80px;
+}
+.section2Item .title {
+  direction: rtl;
+  color: white;
+  font-weight: 800;
+  font-size: 24px;
+  margin-bottom: 3px;
+}
+.section2Item .text p {
+  margin: 0px;
+  direction: rtl;
+  color: white;
+}
+.showHideIcon {
+  width: 22px;
+  cursor: pointer;
+}
+.ovelayText {
+  position: absolute;
+  z-index: 1;
+  height: 81%;
+  width: 85%;
+  border-radius: 0px 0px 20px 20px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+.ovelayText p {
+  color: white;
+  padding: 30px;
+}
+@media (max-width: 1201px) and (min-width: 769px) {
+  .sction2 {
+    gap: 20px;
+  }
+  .section2Item {
+    width: 25%;
+  }
+}
+
+@media (max-width: 768px) {
+  .sction2 {
+    gap: 20px;
+  }
+  .section2Item {
+    width: 80%;
+    min-height: 300px;
+    height: auto;
+  }
+}
+
+/* @media (min-width: 1301px) {
+}
+
+
+
+@media (max-width: 575px) and (min-width: 381px) {
+}
+
+@media (max-width: 380px) {
+} */

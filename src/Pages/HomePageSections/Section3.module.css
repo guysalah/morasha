@@ -1,0 +1,69 @@
+.container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 450px;
+  overflow: hidden;
+}
+.innerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  height: 100%;
+}
+.personImage {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+.personImage img {
+  padding-top: 45px;
+  height: 90%;
+}
+.innerContainer h1 {
+  color: white;
+}
+.innerContainer h2 {
+  color: white;
+}
+.aboutText {
+  width: 90%;
+  max-width: 400px;
+}
+@media (max-width: 1201px) and (min-width: 769px) {
+}
+
+@media (max-width: 768px) {
+  .aboutText {
+    width: 95%;
+    max-width: 95%;
+    text-align: center;
+  }
+  .container {
+    height: auto;
+    padding-top: 60px;
+  }
+  .innerContainer {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+  .personImage img {
+    width: 80vw;
+  }
+}
+
+/* @media (min-width: 1301px) {
+}
+
+
+
+@media (max-width: 575px) and (min-width: 381px) {
+}
+
+@media (max-width: 380px) {
+} */

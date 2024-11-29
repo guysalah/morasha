@@ -17,7 +17,7 @@ const Section3: React.FC<section3Props> = ({ pageData, loading }) => {
   let aboutText = (
     <Skeleton count={3} style={{ width: "300px", marginBottom: "10px" }} />
   );
-  if (!loading) {
+  if (pageData) {
     const text = pageData.homePageData.about_morasha;
     const sanitizedHTML = DOMPurify.sanitize(text || ""); // Sanitize HTML content
     aboutText = <div>{parse(sanitizedHTML)}</div>;

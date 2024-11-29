@@ -1,0 +1,42 @@
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  overflow: hidden;
+  background-color: #ebf7f8;
+  flex-direction: column;
+}
+.topImage {
+  width: 85%;
+  max-width: 650px;
+}
+
+.topImage img {
+  width: 100%;
+  max-width: 650px;
+}
+.title {
+  font-weight: 600;
+  font-size: 40px;
+  letter-spacing: 0.03em;
+  color: #5a3622;
+}
+@media (max-width: 1201px) and (min-width: 769px) {
+}
+
+@media (max-width: 768px) {
+}
+
+/* @media (min-width: 1301px) {
+}
+
+
+
+@media (max-width: 575px) and (min-width: 381px) {
+}
+
+@media (max-width: 380px) {
+} */

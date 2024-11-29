@@ -1,0 +1,70 @@
+.HillPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  background-color: #EBF7F8;
+}
+.HillPageContent {
+  width: 100%;
+}
+.donateButton {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  direction: rtl;
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.topImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0;
+  padding: 40px;
+  position: relative;
+}
+.topImageContent {
+  width: 100%;
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.topImageTitle {
+  font-size: 2.5rem;
+  line-height: 2.2rem;
+  text-align: right;
+  position: absolute;
+  right: 5vw;
+  bottom: 10px;
+  border-radius: 20px;
+  padding: 15px 20px 15px 15px;
+  color: white;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  font-variation-settings: "ROUN" 0, "wght" 700;
+  min-width: 200px;
+}
+.aboutTextContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  padding-bottom: 40px;
+}
+.aboutText {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+}

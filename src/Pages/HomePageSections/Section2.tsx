@@ -9,14 +9,15 @@ interface Section2Props {
 }
 
 const Section2: React.FC<Section2Props> = ({ pageData, loading }) => {
+
   let boxes: ReactNode = (
     <>
-      <Item loading />;
+      <Item loading />
       <Item loading />
       <Item loading />
     </>
   );
-  if (!loading) {
+  if (pageData) {
     interface InfoBox {
       box_title: string;
       box_background_color: string;

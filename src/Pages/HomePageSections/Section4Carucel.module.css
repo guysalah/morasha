@@ -1,0 +1,121 @@
+.caruselContainer {
+  width: 85vw;
+  direction: rtl;
+  margin-top: 30px;
+  position: relative;
+}
+.ovelay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    180deg,
+    rgba(2, 0, 0, 0.5) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
+}
+.title {
+  position: absolute;
+  color: white;
+  font-size: clamp(1.3rem, 2vw, 2rem);
+  line-height: clamp(1.3rem, 2vw, 2rem);
+  font-weight: 700;
+  margin-top: clamp(1rem, 2vw, 2rem);
+  text-align: center;
+  width: 90%;
+}
+.CaruselItem {
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.arrowButton {
+  transition: 0.3s;
+  width: 2rem;
+  height: 100%;
+  cursor: pointer;
+}
+.arrowButtonDisabeled {
+  opacity: 0.4;
+  transition: 0.3s;
+}
+.rightArrowButton {
+  position: absolute;
+  right: -3.2rem;
+  z-index: 2;
+}
+.leftArrowButton {
+  position: absolute;
+  left: -3.2rem;
+  top: 0;
+  z-index: 2;
+}
+.hoverIcon {
+  opacity: 0;
+  transition: opacity 0.2s;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.242);
+  width: 100%;
+  height: 100%;
+}
+
+.CaruselItem:hover .hoverIcon {
+  opacity: 1;
+}
+
+.hoverIcon svg {
+  width: 2.5rem;
+}
+
+@media (768px <= width) {
+  .CaruselItem {
+    --item-size: calc(100vw / 5.8);
+    height: var(--item-size);
+    width: var(--item-size);
+  }
+}
+
+@media (767px >= width >= 501px) {
+  .caruselContainer {
+    width: 75vw;
+  }
+  .CaruselItem {
+    --item-size: calc(100vw / 3.5);
+    height: var(--item-size);
+    width: var(--item-size);
+  }
+  .arrowButton {
+    width: 23px;
+  }
+}
+@media (500px >= width) {
+  .caruselContainer {
+    width: 75vw;
+  }
+  .CaruselItem {
+    --item-size: calc(100vw / 2.1);
+    height: var(--item-size);
+    width: var(--item-size);
+  }
+  .arrowButton {
+    width: 23px;
+  }
+  .rightArrowButton {
+    right: -2.3rem;
+  }
+  .leftArrowButton {
+    left: -2.3rem;
+  }
+}

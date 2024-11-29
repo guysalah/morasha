@@ -17,7 +17,7 @@ const Section1: React.FC = () => {
   const pic2Animation = useTransform(scrollYProgress, [0, 1], [-5, 250]);
   const pic3Animation = useTransform(scrollYProgress, [0, 1], [0, -400]);
   const pic4Animation = useTransform(scrollYProgress, [0, 1], [0, -200]);
-  const pic5Animation = useTransform(scrollYProgress, [0, 1], [-5, 50]);
+  const pic5Animation = useTransform(scrollYProgress, [0, 1], [-5, 280]);
 
   const isMobile = useIsMobile();
 

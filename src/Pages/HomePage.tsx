@@ -1,18 +1,19 @@
-import React from "react";
+import { useEffect } from "react";
 import {
   Link,
   useNavigate,
   useLoaderData,
   useSearchParams,
 } from "react-router-dom";
-import clientConfig from "../clientConfig";
 import styles from "./homePage.module.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useIsMobile } from "../utils/utils";
 import { useGetPageData } from "../utils/getPageData";
 import Section1 from "./HomePageSections/Section1";
 import Section2 from "./HomePageSections/Section2";
 import Section3 from "./HomePageSections/Section3";
+import Section4 from "./HomePageSections/Section4";
+import Footer from "../Components/Footer";
 
 // Define the Redux state shape for type safety
 interface RootState {
@@ -20,15 +21,19 @@ interface RootState {
     topImage: string;
     topImageMobile: string;
   };
+  hills: {
+    selectedHillId: number;
+  };
 }
 
 // Define the component's props interface
 interface HomePageProps {}
 
 const HomePage: React.FC<HomePageProps> = () => {
+  
+
   // Fetch page data using the custom hook
   const { data, error, loading } = useGetPageData(22);
-
   // Get values from the Redux store
   const mainImageUrl = useSelector((state: RootState) => state.links.topImage);
   const mainImageMobileUrl = useSelector(
@@ -49,7 +54,8 @@ const HomePage: React.FC<HomePageProps> = () => {
       <Section1 />
       <Section2 loading={loading} pageData={data} />
       <Section3 loading={loading} pageData={data} />
-      <div style={{ height: "1600px" }}></div>
+      <Section4 />
+      <Footer contactEmail="morsha@morasha.co.il" contactPhone="1111" />
     </section>
   );
 };

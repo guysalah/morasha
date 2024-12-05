@@ -1,6 +1,6 @@
 import { useRef, useCallback, useState } from "react";
 import classes from "./Section4Carucel.module.css";
-import { Hill } from "../../store/Hills"; // interface of hill
+import { Hill as HillType } from "../../types/hill";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation"; // Import Navigation styles
@@ -10,7 +10,7 @@ import { plusIcon } from "../../assest/icons/plusIcon";
 import { Link } from "react-router-dom";
 
 interface CaruselProps {
-  caruselItems: Hill[];
+  caruselItems: HillType[];
 }
 
 const Carusel: React.FC<CaruselProps> = ({ caruselItems }) => {
@@ -155,7 +155,12 @@ interface HillItemProps {
 const HillItem: React.FC<HillItemProps> = ({ id, title, backImageUrl }) => {
   const style = { backgroundImage: `url(${backImageUrl})` };
   return (
-    <Link key={id} to={`/hills/${id}`} replace className={classes.CaruselItem} style={style}>
+    <Link
+      key={id}
+      to={`/hills/${id}`}
+      className={classes.CaruselItem}
+      style={style}
+    >
       <div className={classes.hoverIcon}>{plusIcon}</div>
       <div className={classes.ovelay}></div>
       <div className={classes.title}>{title}</div>

@@ -1,8 +1,8 @@
 const clientConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
   dbUrl: "https://morasha-db.activebranding.co.il",
-  // backendUrl: "https://morasha.co.il",
-  backendUrl: "http://localhost:8000",
+  backendUrl: "https://morasha.co.il",
+  // backendUrl: "http://localhost:8000",
   
   siteLang: "he",
   primaryColor: "#124b78",

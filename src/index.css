@@ -1,6 +1,7 @@
 :root {
   --primary-color: #124b78;
   --secondary-color: #30a1aa;
+  --secondary-color-hover: #29949b;
   --light-brown-color: #bb9d80;
   --dark-brown-color: #5a3622;
 }
@@ -23,12 +24,6 @@ a {
   user-select: none; /* Standard syntax */
 }
 
-p {
-  margin-top: 0px;
-  font-size: 18px;
-  line-height: 1.1em;
-}
-
 h1 {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -39,8 +34,16 @@ h1 {
 h2 {
   margin-top: 0px;
   margin-bottom: 0px;
-  font-size: 22px;
-  line-height: 1.1em;
-  letter-spacing: -0.01em;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
   font-variation-settings: "ROUN" 0, "wght" 300;
+}
+p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 1.5rem;
+  line-height: 1.7rem;
+  font-variation-settings: "ROUN" 0, "wght" 400;
+  margin-block-start: 0;
+  margin-block-end: 20px;
 }

@@ -11,7 +11,7 @@ export const useGetPageData = (pageId: number) => {
       setLoading(true);
       try {
         const response = await fetch(
-          `${clientConfig.backendUrl}/api/home-page`,
+          `${clientConfig.backendUrl}/api/v1/home-data`,
           {
             method: "GET", // Optional, defaults to 'GET'
             headers: {

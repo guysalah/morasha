@@ -4,6 +4,9 @@
   justify-content: center;
   background-color: #eaf3f5;
   height: 70px;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
 }
 
 .header nav {

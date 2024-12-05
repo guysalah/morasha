@@ -7,8 +7,3 @@ export const useIsMobile = () => {
   );
   return mobile;
 };
-
-export const useGetPageData = () => {
-  let data = "123";
-  return data;
-};

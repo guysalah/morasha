@@ -1,15 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Hill as HillType } from "../types/hill";
 
-// Define the Hill type
-export interface Hill {
-  id: number;
-  title: string;
-  featuredImage: string;
-}
 
 // Define the state type
 export interface HillsState {
-  hills: Hill[];
+  hills: HillType[];
 }
 
 // Initial state
@@ -22,7 +17,7 @@ const hillsSlice = createSlice({
   name: "hills",
   initialState: initialHillsStat,
   reducers: {
-    updateHills(state, action: PayloadAction<Hill[]>) {
+    updateHills(state, action: PayloadAction<HillType[]>) {
       state.hills = action.payload;
     },
   },

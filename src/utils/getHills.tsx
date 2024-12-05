@@ -1,12 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import clientConfig from "../clientConfig";
-
-// Define the type for the expected data structure
-interface Hill {
-  id: number;
-  title: string;
-  featuredImage: string;
-}
+import { Hill } from "../types/hill";
 
 export const useGetHills = () => {
   const config = useMemo(() => clientConfig, []);
@@ -19,7 +13,7 @@ export const useGetHills = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`${config.backendUrl}/api/hills`, {
+        const response = await fetch(`${config.backendUrl}/api/v1/hills`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

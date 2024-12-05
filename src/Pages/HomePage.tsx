@@ -30,8 +30,6 @@ interface RootState {
 interface HomePageProps {}
 
 const HomePage: React.FC<HomePageProps> = () => {
-  
-
   // Fetch page data using the custom hook
   const { data, error, loading } = useGetPageData(22);
   // Get values from the Redux store
@@ -55,7 +53,6 @@ const HomePage: React.FC<HomePageProps> = () => {
       <Section2 loading={loading} pageData={data} />
       <Section3 loading={loading} pageData={data} />
       <Section4 />
-      <Footer contactEmail="morsha@morasha.co.il" contactPhone="1111" />
     </section>
   );
 };

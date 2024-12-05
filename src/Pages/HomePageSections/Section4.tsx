@@ -5,14 +5,14 @@ import hillsTopImage from "../../assest/home/hills_top_image.png";
 import { useDispatch, useSelector } from "react-redux";
 import { hillsActions } from "../../store/Hills";
 import Carusel from "./Section4Carucel";
-import { Hill } from "../../store/Hills";
+import { Hill as HillType } from "../../types/hill";
 
 interface Section4Props {}
 
 const Section4: React.FC<Section4Props> = () => {
  
   interface RootState {
-    hills: { hills: Hill[] };
+    hills: { hills: HillType[] };
   }
 
   // Access the hills from Redux

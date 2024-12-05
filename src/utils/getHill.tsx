@@ -1,37 +1,37 @@
 import { useState, useEffect, useMemo } from "react";
 import clientConfig from "../clientConfig";
-
-// Define the type for the expected data structure
-interface Hill {
-  acf: {
-    donate_url: string;
-    top_image: string;
-    about_text: string;
-    about_text2: string;
-    gallery: { sizes: { large: string } }[];
-    coordinates: { latitude: string; longitude: string };
-  };
-  id: number;
-  title: string;
-  featuredImage: string;
-}
+import { Hill as HillType } from "../types/hill";
 
 export const useGetHill = (id: number) => {
   const config = useMemo(() => clientConfig, []);
 
-  const [data, setData] = useState<Hill>({
+  const [data, setData] = useState<HillType>({
     acf: {
       donate_url: "",
       top_image: "",
       about_text: "",
-      about_text2: "",
-      gallery: [],
+      about_text_2: "",
       coordinates: { latitude: "", longitude: "" },
+      gallery: [
+        {
+          row: {
+            image1: { sizes: { large: "" } },
+            image2: { sizes: { large: "" } },
+          },
+        },
+      ],
+      text_on_image: {
+        text: "",
+        background_image: {
+          sizes: { large: "" },
+        },
+      },
     },
     id: 0,
     title: "",
     featuredImage: "",
   });
+
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -40,7 +40,7 @@ export const useGetHill = (id: number) => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`${config.backendUrl}/api/hill/${id}`, {
+        const response = await fetch(`${config.backendUrl}/api/v1/hill/${id}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -53,7 +53,7 @@ export const useGetHill = (id: number) => {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
-        const pageData: Hill = await response.json();
+        const pageData: HillType = await response.json();
         setData(pageData);
       } catch (err) {
         if (err instanceof Error) {

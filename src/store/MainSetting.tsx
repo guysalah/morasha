@@ -1,12 +1,14 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 interface MainSettinState {
   isMobile: boolean;
+  formSent: boolean;
 }
 
 const initialMainSettingStat: MainSettinState = {
   // isMobile acccible from customHook
   //import { useIsMobile } from "../utils/utils";
   isMobile: window.innerWidth < 769,
+  formSent: false,
 };
 
 const mainSettingSlice = createSlice({
@@ -16,6 +18,9 @@ const mainSettingSlice = createSlice({
     // window.addEventListener("resize") and updateIsMobile() are run from MainNavigation.tsx
     updateIsMobile(state) {
       state.isMobile = window.innerWidth < 769;
+    },
+    setFormSent(state, action: PayloadAction<boolean>) {
+      state.formSent = action.payload;
     },
   },
 });

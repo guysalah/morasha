@@ -2,14 +2,11 @@ import { useEffect } from "react";
 import { useGetHills } from "../utils/getHills";
 import { useSelector, useDispatch } from "react-redux";
 import { hillsActions } from "../store/Hills";
+import { Hill as HillType } from "../types/hill";
 
-interface Hill {
-  id: number;
-  title: string;
-  featuredImage: string;
-}
+
 interface RootState {
-  hills: { hills: Hill[] };
+  hills: { hills: HillType[] };
 }
 
 const Hills: React.FC = () => {
@@ -24,13 +21,13 @@ const Hills: React.FC = () => {
       console.error("Failed to fetch hills:", error);
       return;
     }
-    // If hills array is empty, fetch new data and update the Redux store
     if (hills.length === 0 && data && !loading) {
-      dispatch(hillsActions.updateHills(data)); // Update the Redux state when data is available
+      console.log('Raw data:', JSON.stringify(data[0], null, 2));
+      dispatch(hillsActions.updateHills(data));
     }
   }, [data, loading, hills, error, dispatch]);
 
-  return <div>גבעות</div>;
+  return <div style={{ height: "80vh" }}>גבעות</div>;
 };
 
 export default Hills;

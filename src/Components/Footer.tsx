@@ -1,17 +1,9 @@
 import React from "react";
 import classes from "./Footer.module.css";
 
-interface FooterProps {
-  logoText?: string;
-  contactEmail: string;
-  contactPhone: string;
-}
+interface FooterProps {}
 
-const Footer: React.FC<FooterProps> = ({
-  logoText = "Logo",
-  contactEmail,
-  contactPhone,
-}) => {
+const Footer: React.FC<FooterProps> = () => {
   const donateIcon = (
     <svg
       width="120"

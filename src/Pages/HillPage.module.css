@@ -4,9 +4,9 @@
   align-items: center;
   width: 100%;
   flex-direction: column;
-  background-color: #EBF7F8;
+  background-color: #ebf7f8;
 }
-.HillPageContent {
+.section1Container {
   width: 100%;
 }
 .donateButton {
@@ -20,6 +20,9 @@
   font-weight: 600;
   font-size: 1.2rem;
   cursor: pointer;
+  position: fixed;
+  top: 70px;
+  z-index: 10;
 }
 .topImage {
   display: flex;
@@ -59,12 +62,65 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 50px;
 }
 .aboutText {
-  font-size: 1.2rem;
-  line-height: 1.5rem;
   text-align: center;
   width: 80%;
-  max-width: 400px;
+  max-width: 650px;
+}
+.section2Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.section2Content {
+  position: relative;
+  width: 80vw;
+  max-width: 1200px;
+  height: 450px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: rgb(210, 210, 210);
+  margin-bottom: 50px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  direction: rtl;
+}
+.section2Text {
+  position: absolute;
+  max-width: 350px;
+  margin-right: 60px;
+  color: white;
+  border-radius: 20px;
+  height: 80%;
+}
+.section2Text p {
+  padding: 40px;
+}
+
+@media (max-width: 768px) {
+  .section2Content {
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+  }
+  .section2Text {
+    margin-right: 0px;
+    width: 90%;
+    height: 90%;
+    background-color: rgba(48, 161, 170, 0.9) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .section2Text p {
+    padding: 20px;
+    text-align: center !important;
+  }
 }

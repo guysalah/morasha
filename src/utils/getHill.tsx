@@ -8,7 +8,7 @@ export const useGetHill = (id: number) => {
   const [data, setData] = useState<HillType>({
     acf: {
       donate_url: "",
-      top_image: "",
+      top_image: [],
       about_text: "",
       about_text_2: "",
       coordinates: { latitude: "", longitude: "" },

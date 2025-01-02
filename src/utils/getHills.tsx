@@ -2,13 +2,17 @@ import { useState, useEffect, useMemo } from "react";
 import clientConfig from "../clientConfig";
 import { Hill } from "../types/hill";
 
-export const useGetHills = () => {
+export const useGetHills = (shouldFetch: boolean = true) => {
   const config = useMemo(() => clientConfig, []);
   const [data, setData] = useState<Hill[]>([]);
   const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
+    if (!shouldFetch) {
+      return;
+    }
+
     const controller = new AbortController();
     const fetchData = async () => {
       setLoading(true);
@@ -47,7 +51,7 @@ export const useGetHills = () => {
       // Abort the fetch if the component unmounts
       controller.abort();
     };
-  }, [config]);
+  }, [shouldFetch, config]);
 
   return { data, error, loading };
 };

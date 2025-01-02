@@ -11,7 +11,7 @@ export interface HillsState {
 const initialHillStat: HillsState = {
   hill: {} as HillType,
 };
-console.log(initialHillStat);
+
 // Create the slice
 const hillSlice = createSlice({
   name: "hill",

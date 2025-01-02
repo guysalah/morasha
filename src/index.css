@@ -1,9 +1,14 @@
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --primary-color: #124b78;
   --secondary-color: #30a1aa;
   --secondary-color-hover: #29949b;
   --light-brown-color: #bb9d80;
   --dark-brown-color: #5a3622;
+  --primary-font: "nextexit-variable", sans-serif;
 }
 
 body {

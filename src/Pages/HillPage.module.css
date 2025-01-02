@@ -8,7 +8,9 @@
 }
 .section1Container {
   width: 100%;
+  position: relative;
 }
+
 .donateButton {
   width: 100%;
   height: 40px;
@@ -32,6 +34,7 @@
   padding: 40px;
   position: relative;
 }
+
 .topImageContent {
   width: 100%;
   height: 500px;
@@ -41,6 +44,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 20px;
+  background-position: center;
 }
 .topImageTitle {
   font-size: 2.5rem;
@@ -122,5 +126,40 @@
   .section2Text p {
     padding: 20px;
     text-align: center !important;
+  }
+}
+.paginationBullet {
+  width: 10px;
+  height: 10px;
+}
+:global(.swiper-pagination-bullet) {
+  opacity: 0.4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+:global(.swiper-pagination-bullet-active) {
+  opacity: 1;
+}
+
+@media (max-width: 550px) {
+  .topImage {
+    padding: 0px;
+  }
+  .topImageContent {
+    border-radius: 0px;
+  }
+  .topImageTitle {
+    font-size: 2.5rem;
+    line-height: 2.2rem;
+    text-align: right;
+    position: absolute;
+    right: 5vw;
+    bottom: 40px;
+    border-radius: 20px;
+    padding: 15px 20px 15px 15px;
+    color: white;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    font-variation-settings: "ROUN" 0, "wght" 700;
+    min-width: 200px;
   }
 }

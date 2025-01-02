@@ -24,7 +24,7 @@ const Section4: React.FC<Section4Props> = () => {
 
   useEffect(() => {
     // If hills array is empty, fetch new data and update the Redux store
-    if (hills.length == 0 && data && !loading) {
+    if (hills.length === 0 && data && !loading) {
       dispatch(hillsActions.updateHills(data)); // Update the Redux state when data is available
     }
   }, [data, loading, hills, dispatch]);

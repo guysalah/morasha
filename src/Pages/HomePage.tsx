@@ -1,10 +1,3 @@
-import { useEffect } from "react";
-import {
-  Link,
-  useNavigate,
-  useLoaderData,
-  useSearchParams,
-} from "react-router-dom";
 import styles from "./homePage.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { useIsMobile } from "../utils/utils";
@@ -13,7 +6,6 @@ import Section1 from "./HomePageSections/Section1";
 import Section2 from "./HomePageSections/Section2";
 import Section3 from "./HomePageSections/Section3";
 import Section4 from "./HomePageSections/Section4";
-import Footer from "../Components/Footer";
 
 // Define the Redux state shape for type safety
 interface RootState {

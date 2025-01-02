@@ -9,7 +9,7 @@ export interface Hill {
   featuredImage: string;
   acf: {
     donate_url: string;
-    top_image: string;
+    top_image: string[];
     about_text: string;
     about_text_2: string;
     coordinates: { latitude: string; longitude: string };

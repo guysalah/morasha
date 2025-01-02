@@ -14,10 +14,10 @@
 }
 
 .section2Item {
-  width: 300px;
+  width: 330px;
   height: 300px;
   max-width: 80vw;
-  padding: 20px;
+  padding: 30px;
   padding-top: 40px;
   display: flex;
   align-items: center;
@@ -46,7 +46,13 @@
   font-size: 24px;
   margin-bottom: 3px;
 }
+.section2Item .text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .section2Item .text p {
+  width: 90%;
   margin: 0px;
   direction: rtl;
   color: white;

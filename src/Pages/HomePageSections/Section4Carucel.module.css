@@ -18,8 +18,8 @@
 .title {
   position: absolute;
   color: white;
-  font-size: clamp(1.3rem, 2vw, 2rem);
-  line-height: clamp(1.3rem, 2vw, 2rem);
+  font-size: clamp(1.5rem, 2.3vw, 4rem);
+  line-height: clamp(1.3rem, 2vw, 1.8rem);
   font-weight: 700;
   margin-top: clamp(1rem, 2vw, 2rem);
   text-align: center;
@@ -105,9 +105,18 @@
     width: 75vw;
   }
   .CaruselItem {
-    --item-size: calc(100vw / 2.1);
-    height: var(--item-size);
-    width: var(--item-size);
+    height: 350px;
+    width: 100%;
+  }
+  .CaruselItem a {
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .title {
+    font-size: 3rem;
+    width: 80%;
+    line-height: 2.5rem;
+    padding-top: 3rem;
   }
   .arrowButton {
     width: 23px;

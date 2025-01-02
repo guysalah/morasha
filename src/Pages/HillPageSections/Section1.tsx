@@ -1,3 +1,4 @@
+import { useCallback, useRef, MutableRefObject, useState } from "react";
 import classes from "../HillPage.module.css";
 import { Link } from "react-router-dom";
 import clientConfig from "../../clientConfig";
@@ -5,6 +6,13 @@ import Skeleton from "react-loading-skeleton";
 import { useSelector } from "react-redux";
 import { Hill as HillType } from "../../types/hill";
 import parse from "html-react-parser";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import type { Swiper as SwiperCore } from "swiper";
+import { Navigation, Autoplay, EffectFade, Pagination } from "swiper/modules";
+
+import nonTopImage from "../../assest/non_top_image.jpg";
+
 interface Section1Props {
   loading: boolean;
 }
@@ -14,26 +22,42 @@ const Section1: React.FC<Section1Props> = ({ loading }) => {
     (state: { hill: { hill: HillType } }) => state.hill.hill
   );
 
-  if (loading)
-    return (
-      <div className={classes.section1Container}>
-        <div style={{ padding: "40px" }}>
-          <Skeleton
-            height={500}
-            width="100%"
-            // baseColor={clientConfig.secondaryColor}
-            // highlightColor="white"
-            style={{ borderRadius: "20px" }}
-          />
-        </div>
-      </div>
-    );
-  if (!data || !data.acf) return null;
+  const sliderRef = useRef() as MutableRefObject<SwiperCore | null>;
 
-  // Verify the required properties exist
-  if (!data.acf.donate_url || !data.acf.top_image || !data.acf.about_text) {
-    return null;
+  const loader = (
+    <div className={classes.section1Container}>
+      <div style={{ padding: "40px" }}>
+        <Skeleton
+          height={500}
+          width="100%"
+          // baseColor={clientConfig.secondaryColor}
+          // highlightColor="white"
+          style={{ borderRadius: "20px", marginTop: "40px" }}
+        />
+      </div>
+    </div>
+  );
+
+  if (loading || Object.keys(data).length === 0) {
+    return loader;
   }
+
+  const myPagination = {
+    clickable: true,
+    renderBullet: function (index: number, className: string) {
+      return (
+        '<span  class="' +
+        className +
+        " " +
+        classes.paginationBullet +
+        '" style="background-color: ' +
+        clientConfig.secondaryColor +
+        ';">' +
+        (index + 1) +
+        "</span>"
+      );
+    },
+  };
 
   return (
     <div className={classes.section1Container}>
@@ -48,7 +72,7 @@ const Section1: React.FC<Section1Props> = ({ loading }) => {
       <div style={{ height: "30px" }}></div>
       <div className={classes.topImage}>
         <h1
-          style={{ backgroundColor: clientConfig.secondaryColor }}
+          style={{ backgroundColor: clientConfig.secondaryColor, zIndex: 1 }}
           className={classes.topImageTitle}
         >
           {data.title?.split("גבעת").map((part: string, index: number) =>
@@ -63,10 +87,52 @@ const Section1: React.FC<Section1Props> = ({ loading }) => {
             )
           )}
         </h1>
-        <div
-          style={{ backgroundImage: `url(${data.acf.top_image})` }}
-          className={classes.topImageContent}
-        ></div>
+
+        {data.acf.top_image.length > 1 ? (
+          <Swiper
+            style={{ zIndex: 0 }}
+            onSwiper={(swiper) => {
+              sliderRef.current = swiper;
+              swiper.autoplay.start();
+            }}
+            className={classes.topImageContent}
+            slidesPerView={1}
+            pagination={myPagination}
+            modules={[Navigation, Autoplay, EffectFade, Pagination]}
+            autoplay={{
+              delay: 5000,
+            }}
+            loop={true}
+            effect="fade"
+            fadeEffect={{
+              crossFade: true,
+            }}
+          >
+            {data.acf.top_image.map((image, index) => {
+              return (
+                <SwiperSlide
+                  className={classes.topImageContent}
+                  style={{
+                    backgroundImage: `url(${image})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                  key={index}
+                ></SwiperSlide>
+              );
+            })}
+          </Swiper>
+        ) : (
+          <div
+            style={{
+              backgroundImage: `url(${
+                data.acf.top_image[0] ? data.acf.top_image[0] : nonTopImage
+              })`,
+            }}
+            className={classes.topImageContent}
+          ></div>
+        )}
       </div>
       <div className={classes.aboutTextContainer}>
         <div

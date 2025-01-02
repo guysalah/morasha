@@ -2,10 +2,8 @@ import { useRef, useCallback, useState } from "react";
 import classes from "./Section4Carucel.module.css";
 import { Hill as HillType } from "../../types/hill";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation"; // Import Navigation styles
-import { Navigation } from "swiper/modules";
 import type { Swiper as SwiperCore } from "swiper";
+import { Navigation } from "swiper/modules";
 import { plusIcon } from "../../assest/icons/plusIcon";
 import { Link } from "react-router-dom";
 
@@ -108,7 +106,7 @@ const Carusel: React.FC<CaruselProps> = ({ caruselItems }) => {
         </div>
 
         <Swiper
-          slidesPerView={1.5}
+          slidesPerView={1}
           spaceBetween={20}
           pagination={false}
           onSwiper={(swiper) => (sliderRef.current = swiper)} // Assign the Swiper instance
@@ -130,6 +128,7 @@ const Carusel: React.FC<CaruselProps> = ({ caruselItems }) => {
             return (
               <SwiperSlide>
                 <HillItem
+                  key={item.id}
                   id={item.id}
                   title={item.title}
                   backImageUrl={item.featuredImage}
@@ -154,6 +153,12 @@ interface HillItemProps {
 }
 const HillItem: React.FC<HillItemProps> = ({ id, title, backImageUrl }) => {
   const style = { backgroundImage: `url(${backImageUrl})` };
+  const splitTitle = title.split("גבעת").map((part, index) => (
+    <span key={index}>
+      {part}
+      {index < title.split("גבעת").length - 1 && <span>גבעת<br /></span>}
+    </span>
+  ));
   return (
     <Link
       key={id}
@@ -163,7 +168,7 @@ const HillItem: React.FC<HillItemProps> = ({ id, title, backImageUrl }) => {
     >
       <div className={classes.hoverIcon}>{plusIcon}</div>
       <div className={classes.ovelay}></div>
-      <div className={classes.title}>{title}</div>
+      <div className={classes.title}>{splitTitle}</div>
     </Link>
   );
 };

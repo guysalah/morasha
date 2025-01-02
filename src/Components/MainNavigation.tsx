@@ -282,7 +282,7 @@ function MainNavigation() {
     },
     bmOverlay: {
       background: "rgb(234 243 245 / 80%)",
-      zIndex:'1001'
+      zIndex: "1001",
     },
   };
 
@@ -315,6 +315,7 @@ function MainNavigation() {
         className={classes.header}
         style={{ direction: siteLang === "he" ? "rtl" : "ltr" }}
       >
+     
         <nav>
           <div className={classes.rightSection}>
             <Link to="/" className={classes.logoContainer}>

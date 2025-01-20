@@ -3,9 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { useIsMobile } from "../utils/utils";
 import { useGetPageData } from "../utils/getPageData";
 import Section1 from "./HomePageSections/Section1";
-import Section2 from "./HomePageSections/Section2";
+import Section2B from "./HomePageSections/Section2B";
 import Section3 from "./HomePageSections/Section3";
 import Section4 from "./HomePageSections/Section4";
+import Section5 from "./HomePageSections/Section5";
+import Section6 from "./HomePageSections/Section6";
+
 
 // Define the Redux state shape for type safety
 interface RootState {
@@ -42,9 +45,11 @@ const HomePage: React.FC<HomePageProps> = () => {
         />
       </div>
       <Section1 />
-      <Section2 loading={loading} pageData={data} />
+      <Section2B loading={loading} pageData={data} />
       <Section3 loading={loading} pageData={data} />
       <Section4 />
+      <Section5 loading={loading} pageData={data}/>
+      <Section6 loading={loading} pageData={data}/>
     </section>
   );
 };

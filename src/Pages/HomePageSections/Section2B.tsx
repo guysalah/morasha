@@ -1,45 +1,41 @@
 import parse from "html-react-parser";
 import DOMPurify from "dompurify";
 import Skeleton from "react-loading-skeleton";
-import goats_background from "../../../src/assest/home/goats_background.jpg";
 import person_back from "../../../src/assest/home/person_back.png";
-import wall from "../../../src/assest/home/wall.webp";
-import classes from "./Section3.module.css";
+import section2Back from '../../../src/assest/home/section2Back.webp'
+import classes from "./Section2B.module.css";
 
 interface section3Props {
   pageData: {
     homePageData: {
       about_morasha: string;
+      going_up_text: string;
     };
   };
   loading: boolean;
 }
 const Section3: React.FC<section3Props> = ({ pageData, loading }) => {
+  console.log(pageData);
   let aboutText = (
     <Skeleton count={3} style={{ width: "300px", marginBottom: "10px" }} />
   );
   if (pageData) {
-    const text = pageData.homePageData.about_morasha;
+    const text = pageData.homePageData.going_up_text;
     const sanitizedHTML = DOMPurify.sanitize(text || ""); // Sanitize HTML content
     aboutText = <div>{parse(sanitizedHTML)}</div>;
   }
 
   return (
     <div
-      className={classes.container + " " + classes.section3Container}
-      style={{ backgroundImage: `url(${goats_background})` }}
+      className={classes.container}
+      style={{ backgroundImage: `url(${section2Back})` }}
     >
-      <div className={classes.backgroundImage}>
-        <img src={wall} alt="wall" />
-      </div>
-
       <div className={classes.innerContainer}>
         <div className={classes.personImage}>
+          <img alt="person_back" src={person_back} />
         </div>
 
-        <div className={classes.aboutText + " " + classes.section3Text}>
-          {aboutText}
-        </div>
+        <div className={classes.aboutText}>{aboutText}</div>
       </div>
     </div>
   );

@@ -10,7 +10,6 @@ import { Hill as HillType } from "../../types/hill";
 interface Section4Props {}
 
 const Section4: React.FC<Section4Props> = () => {
- 
   interface RootState {
     hills: { hills: HillType[] };
   }
@@ -31,12 +30,11 @@ const Section4: React.FC<Section4Props> = () => {
 
   return (
     <div className={clacess.container}>
-      <div className={clacess.title}>הגבעות שלכם</div>
       <div className={clacess.topImage}>
         <img src={hillsTopImage} alt="Hills" />
       </div>
-
-      <Carusel caruselItems={hills}/>
+      <div className={clacess.title}>הגבעות שלכם</div>
+      <Carusel caruselItems={hills} />
     </div>
   );
 };

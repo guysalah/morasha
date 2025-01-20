@@ -7,7 +7,9 @@ interface LinksState {
   logoVertical: string;
   topImage: string;
   topImageMobile: string;
-
+  israelMap: string;
+  israelMapMobile: string;
+  oliveTree: string;
 }
 // Define the initial state
 const initialLinksState: LinksState = {
@@ -15,6 +17,9 @@ const initialLinksState: LinksState = {
   logoVertical: `${clientConfig.dbUrl}/wp-content/react_images/morasha_logo.svg?v=1`,
   topImage: `${clientConfig.dbUrl}/wp-content/react_images/topImage.jpg`,
   topImageMobile: `${clientConfig.dbUrl}/wp-content/react_images/topImageMobile.jpg`,
+  israelMap: `${clientConfig.dbUrl}/wp-content/react_images/israelMap.jpg`,
+  israelMapMobile: `${clientConfig.dbUrl}/wp-content/react_images/israelMapMobile.jpg`,
+  oliveTree: `${clientConfig.dbUrl}/wp-content/react_images/oliveTree.jpg`,
 };
 
 const linksSlice = createSlice({

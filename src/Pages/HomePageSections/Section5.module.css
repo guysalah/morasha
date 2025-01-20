@@ -1,0 +1,21 @@
+.container {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: right;
+}
+.noTime {
+  color: white;
+  font-size: 20px;
+  width: 80%;
+  max-width: 500px;
+  background-color: var(--secondary-color-opacity);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}

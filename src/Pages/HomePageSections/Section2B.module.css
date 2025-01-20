@@ -1,3 +1,4 @@
+
 .container {
   background-size: cover;
   background-repeat: no-repeat;
@@ -9,54 +10,15 @@
   overflow: hidden;
   position: relative;
 }
-.backgroundImage {
+.container p {
+  color: var(--dark-brown-color);
+}
+.wall {
   position: absolute;
   left: 0;
   bottom: -1px;
   font-size: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
 }
-.backgroundImage img {
-  width: 800px;
-  height: auto;
-  position: relative;
-}
-@media (max-width: 1250px) and (min-width: 1101px) {
-  .backgroundImage img {
-    right: 150px;
-  }
-}
-@media (max-width: 1100px) and (min-width: 769px) {
-  .container {
-    height: auto;
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
-  .section3Text {
-    max-width: 330px !important;
-  }
-  .backgroundImage img {
-    right: 200px;
-    width: 80vw;
-  }
-}
-@media (max-width: 768px) {
-  .backgroundImage {
-    position: relative;
-  }
-  .backgroundImage img {
-    width: 95vw;
-    padding-top: 30px;
-  }
-  .section3Container {
-    flex-direction: column-reverse;
-  }
-}
-
 .innerContainer {
   position: relative;
   z-index: 1;
@@ -77,10 +39,10 @@
   height: 90%;
 }
 .innerContainer h1 {
-  color: white;
+  color: var(--dark-brown-color);
 }
 .innerContainer h2 {
-  color: white;
+  color: var(--dark-brown-color);
 }
 .aboutText {
   width: 90%;

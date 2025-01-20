@@ -1,0 +1,56 @@
+.container {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #bfa48a;
+}
+.innerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: 800px;
+}
+.image {
+  width: 100%;
+  height: 100%;
+}
+.text {
+  width: 100%;
+  color: white;
+}
+@media (max-width: 1000px) and (min-width: 769px) {
+  .container {
+    height: 350px;
+  }
+  .innerContainer {
+    width: 80%;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    height: auto;
+  }
+  .innerContainer {
+    flex-direction: column-reverse;
+  }
+  .image {
+    width: 100%;
+    height: 100%;
+  }
+  .image img {
+    width: 100%;
+    height: 100%;
+  }
+  .text {
+    width: 90%;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+}

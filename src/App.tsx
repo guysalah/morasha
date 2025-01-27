@@ -4,6 +4,7 @@ import About from "./Pages/About";
 import Hills from "./Pages/Hills";
 import HillPage from "./Pages/HillPage";
 import Contact from "./Pages/Contact";
+import Gallery from "./Pages/Gallery";
 import Error from "./Pages/Error";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
       { path: "/about", element: <About /> },
       { path: "/hills", element: <Hills /> },
       { path: "/hills/:hillId", element: <HillPage /> },
-      { path: "/gallery", element: <Hills /> },
+      { path: "/gallery", element: <Gallery /> },
       { path: "/tour-scedual", element: <Hills /> },
       { path: "/contact", element: <Contact /> },
     ],

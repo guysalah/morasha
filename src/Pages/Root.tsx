@@ -3,8 +3,15 @@ import Footer from "../Components/Footer";
 import { Outlet } from "react-router-dom";
 import ScrollToTop from "../utils/ScrollToTop";
 import clientConfig from "../clientConfig";
+import TourFormPopUp from "../Components/TourFormPopUp";
+import { useSelector } from "react-redux";
 
 function RootLayout() {
+
+  const tourFormPopUp = useSelector(
+    (state: any) => state.mainSetting.tourFormPopUp
+  );
+
   return (
     <>
       {clientConfig.backendUrl.includes("localhost") && (
@@ -25,6 +32,7 @@ function RootLayout() {
       )}
 
       <ScrollToTop />
+      {tourFormPopUp && <TourFormPopUp />}
       <MainNavigation />
       <div style={{ paddingTop: "70px" }}></div>
       <Outlet />

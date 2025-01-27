@@ -34,12 +34,10 @@ const Section3: React.FC<section3Props> = ({ pageData, loading }) => {
       </div>
 
       <div className={classes.innerContainer}>
-        <div className={classes.personImage}>
-        </div>
-
         <div className={classes.aboutText + " " + classes.section3Text}>
           {aboutText}
         </div>
+        <div className={classes.personImage}></div>
       </div>
     </div>
   );

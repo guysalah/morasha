@@ -15,6 +15,8 @@ import { tureIcon } from "../assest/icons/tureIcon";
 import nonTopImage from "../assest/non_top_image.jpg";
 
 import { useIsMobile } from "../utils/utils";
+import { useDispatch } from "react-redux";
+import { mainSettingActions } from "../store/MainSetting";
 
 interface HillItemProps {
   loading: boolean;
@@ -22,13 +24,22 @@ interface HillItemProps {
 }
 const HillItem = ({ loading, hill }: HillItemProps) => {
   const title = hill?.title ?? "";
-  console.log(hill?.acf);
+  // console.log(hill);
+  const tourEmail = hill?.acf?.tour_email ?? "";
+  // console.log(tourEmail);
   const topImage = hill?.acf?.top_image[0]
     ? hill.acf.top_image[0]
     : nonTopImage;
   const aboutText = hill?.acf?.about_text ?? "";
-
   const isMobile = useIsMobile();
+
+  const dispatch = useDispatch();
+  const handleTourEmail = (tourEmail: string, title: string, hillId: string) => {
+    dispatch(mainSettingActions.setTourFormPopUp(true));
+    dispatch(mainSettingActions.setSelectedTourName(title));
+    dispatch(mainSettingActions.setSelectedTourEmail(tourEmail));
+    dispatch(mainSettingActions.setSelectedTHillId(hillId));  
+  };
 
   return (
     <div className={styles.hillItem}>
@@ -80,14 +91,20 @@ const HillItem = ({ loading, hill }: HillItemProps) => {
                 fontSize={isMobile ? "1.6rem" : "1.6rem"}
               />
             </Link>
-            <Link to={`/`}>
-              <CustomButtonWithIcon
-                hillName={`ב${title}`}
-                icon={tureIcon}
-                title="תאום סיור"
-                fontSize={isMobile ? "1.2rem" : "1.3rem"}
-              />
-            </Link>
+            {tourEmail && (
+              <div
+                onClick={() =>
+                  handleTourEmail(tourEmail, title, hill?.id.toString() ?? "")
+                }
+              >
+                <CustomButtonWithIcon
+                  hillName={`ב${title}`}
+                  icon={tureIcon}
+                  title="תאום סיור"
+                  fontSize={isMobile ? "1.2rem" : "1.3rem"}
+                />
+              </div>
+            )}
           </div>
         </>
       )}

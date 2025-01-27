@@ -15,7 +15,7 @@ interface section3Props {
   loading: boolean;
 }
 const Section3: React.FC<section3Props> = ({ pageData, loading }) => {
-  console.log(pageData);
+  // console.log(pageData);
   let aboutText = (
     <Skeleton count={3} style={{ width: "300px", marginBottom: "10px" }} />
   );

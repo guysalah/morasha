@@ -13,11 +13,11 @@ interface RootState {
 
 const Hills: React.FC = () => {
   const hills = useSelector((state: RootState) => state.hills.hills);
-  console.log(hills);
+
   const dispatch = useDispatch();
 
   const shouldFetchHills = hills.length === 0;
-  const { data, error, loading } = useGetHills(shouldFetchHills);
+  const { data, loading } = useGetHills(shouldFetchHills);
 
   useEffect(() => {
     if (shouldFetchHills && data && !loading) {
@@ -32,7 +32,6 @@ const Hills: React.FC = () => {
     };
   }, []);
 
-
   return (
     <div className={styles.hillsContainer} style={hillContainerStyles}>
       <div className={styles.hills}>
@@ -46,7 +45,9 @@ const Hills: React.FC = () => {
             <HillItem loading={true} />
           </>
         ) : (
-          hills.map((hill) => <HillItem hill={hill} key={hill.id} loading={false} />)
+          hills.map((hill) => (
+            <HillItem hill={hill} key={hill.id} loading={false} />
+          ))
         )}
       </div>
     </div>

@@ -1,0 +1,69 @@
+.tourFormPopUp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tourFormPopUpContent {
+  width: 90%;
+  max-width: 500px;
+  padding: 40px;
+  padding-top: 40px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+}
+.tourFormPopUpClose {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: var(--primary-color);
+  height: 30px;
+  width: 30px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: 0.3s;
+}
+.tourFormPopUpClose:hover {
+  background-color: var(--primary-color-hover);
+  transition: 0.3s;
+}
+.tourFormPopUpClose > div {
+  position: relative;
+  top: 1px;
+}
+.tourFormPopUpTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.tourFormPopUpTitle > h2 {
+  font-size: 28px;
+  font-weight: 400;
+}
+/* @media (min-width: 1301px) {
+}
+
+@media (max-width: 768px) and (min-width: 576px) {
+}
+
+@media (max-width: 575px) and (min-width: 381px) {
+}
+
+@media (max-width: 380px) {
+} */

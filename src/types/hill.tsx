@@ -18,5 +18,6 @@ export interface Hill {
       text: string;
       background_image: Sizes;
     };
+    tour_email: string;
   };
 }

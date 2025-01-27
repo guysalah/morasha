@@ -2,84 +2,34 @@ export const iconFlag = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="100%"
-      height="100%"
-      viewBox="0 0 85.031 74.624"
+      width="62.503"
+      height="70.761"
+      viewBox="0 0 62.503 70.761"
     >
       <g
         id="Group_1"
         data-name="Group 1"
-        transform="translate(-801.96 -536.985)"
+        transform="translate(-805.824 -609.99)"
       >
         <path
-          id="Path_11"
-          data-name="Path 11"
-          d="M80.7,105.575A37.033,37.033,0,0,1,69.455,114"
-          transform="translate(802 469)"
+          id="Path_1"
+          data-name="Path 1"
+          d="M2.662,19.993l27.228,47.6a1.28,1.28,0,0,0,2.22.01L59.652,20.266a1.285,1.285,0,0,0-1.111-1.919L3.786,18.091a1.279,1.279,0,0,0-1.126,1.9Z"
+          transform="translate(806 610)"
           fill="none"
           stroke="#37acbb"
           stroke-miterlimit="10"
-          stroke-width="2"
+          stroke-width="5"
         />
         <path
-          id="Path_12"
-          data-name="Path 12"
-          d="M4.255,105.019c16.5-18.4,45.295-11.352,61.794-29.751"
-          transform="translate(802 469)"
+          id="Path_2"
+          data-name="Path 2"
+          d="M59.658,50.75,32.43,3.149a1.28,1.28,0,0,0-2.22-.01L2.667,50.477A1.285,1.285,0,0,0,3.778,52.4l54.756.256a1.281,1.281,0,0,0,1.126-1.9Z"
+          transform="translate(806 610)"
           fill="none"
           stroke="#37acbb"
           stroke-miterlimit="10"
-          stroke-width="2"
-        />
-        <path
-          id="Path_13"
-          data-name="Path 13"
-          d="M65.256,115.864c-15.609,6.161-34.277,5.994-46.354,19.463"
-          transform="translate(802 469)"
-          fill="none"
-          stroke="#37acbb"
-          stroke-miterlimit="10"
-          stroke-width="2"
-        />
-        <path
-          id="Path_14"
-          data-name="Path 14"
-          d="M69.535,82.482,63.393,69.773a1.381,1.381,0,0,0-2.218-.38C48.816,81.708,30.4,81.5,15.159,87.844"
-          transform="translate(802 469)"
-          fill="none"
-          stroke="#37acbb"
-          stroke-miterlimit="10"
-          stroke-width="2"
-        />
-        <path
-          id="Path_15"
-          data-name="Path 15"
-          d="M11.075,89.76a36.9,36.9,0,0,0-9.7,7.264,1.378,1.378,0,0,0-.237,1.547l20.42,42.251a1.381,1.381,0,0,0,2.217.38c16.459-16.4,43.655-10.584,59.8-27.631a1.378,1.378,0,0,0,.237-1.547L71.5,86.548"
-          transform="translate(802 469)"
-          fill="none"
-          stroke="#37acbb"
-          stroke-miterlimit="10"
-          stroke-width="2"
-        />
-        <path
-          id="Path_16"
-          data-name="Path 16"
-          d="M52.9,105.72,38.26,95.753a.413.413,0,0,0-.646.311L36.319,113.7a.415.415,0,0,0,.594.4l15.931-7.671A.413.413,0,0,0,52.9,105.72Z"
-          transform="translate(802 469)"
-          fill="none"
-          stroke="#37acbb"
-          stroke-miterlimit="10"
-          stroke-width="2"
-        />
-        <path
-          id="Path_17"
-          data-name="Path 17"
-          d="M32.053,104.874l14.637,9.967a.413.413,0,0,0,.646-.311l1.3-17.638a.415.415,0,0,0-.594-.4l-15.931,7.671A.413.413,0,0,0,32.053,104.874Z"
-          transform="translate(802 469)"
-          fill="none"
-          stroke="#37acbb"
-          stroke-miterlimit="10"
-          stroke-width="2"
+          stroke-width="5"
         />
       </g>
     </svg>

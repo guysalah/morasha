@@ -1,13 +1,30 @@
 import { useState } from "react";
-import classes from "./ContactForm.module.css";
-import Input from "./Input";
-import clientConfig from "../../clientConfig";
+import classes from "./TourForm.module.css";
+import Input from "../Pages/ContactSections/Input";
+import clientConfig from "../clientConfig";
 import { useDispatch, useSelector } from "react-redux";
-import { mainSettingActions } from "../../store/MainSetting";
+import { mainSettingActions } from "../store/MainSetting";
 
-const Form = () => {
+const TourForm = () => {
   const dispatch = useDispatch();
 
+  interface MainSettingRootState {
+    mainSetting: {
+      selectedTourName: string;
+      selectedTourEmail: string;
+      selectedTHillId: string;
+    };
+  }
+
+  const selectedTourName = useSelector(
+    (state: MainSettingRootState) => state.mainSetting.selectedTourName
+  );
+  const selectedTourEmail = useSelector(
+    (state: MainSettingRootState) => state.mainSetting.selectedTourEmail
+  );
+  const selectedTHillId = useSelector(
+    (state: MainSettingRootState) => state.mainSetting.selectedTHillId
+  );
   const [inputs, setInputs] = useState([
     {
       id: "id1",
@@ -120,10 +137,15 @@ const Form = () => {
     if (validateInputs()) {
       try {
         const response = await fetch(
-          `${clientConfig.backendUrl}/emails/email-form`,
+          `${clientConfig.backendUrl}/emails/email-tour-form`,
           {
             method: "POST",
-            body: JSON.stringify(inputs),
+            body: JSON.stringify({
+              inputs: inputs,
+              selectedTourName: selectedTourName,
+              selectedTourEmail: selectedTourEmail,
+              selectedTHillId: selectedTHillId,
+            }),
             headers: {
               "Content-Type": "application/json",
               "x-api-key": clientConfig.apiKey || "",
@@ -133,7 +155,7 @@ const Form = () => {
 
         const data = await response.json();
         if (data.success) {
-          dispatch(mainSettingActions.setFormSent(true));
+          dispatch(mainSettingActions.setTourFormSent(true));
           clearInputs();
         } else {
           throw new Error("Form submission failed");
@@ -190,10 +212,10 @@ const Form = () => {
         type="submit"
         disabled={formSent}
       >
-        שליחת הודעה
+        תאמו לי סיור
       </button>
     </form>
   );
 };
 
-export default Form;
+export default TourForm;

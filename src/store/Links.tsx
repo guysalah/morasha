@@ -17,9 +17,9 @@ const initialLinksState: LinksState = {
   logoVertical: `${clientConfig.dbUrl}/wp-content/react_images/morasha_logo.svg?v=1`,
   topImage: `${clientConfig.dbUrl}/wp-content/react_images/topImage.jpg`,
   topImageMobile: `${clientConfig.dbUrl}/wp-content/react_images/topImageMobile.jpg`,
-  israelMap: `${clientConfig.dbUrl}/wp-content/react_images/israelMap.jpg`,
-  israelMapMobile: `${clientConfig.dbUrl}/wp-content/react_images/israelMapMobile.jpg`,
-  oliveTree: `${clientConfig.dbUrl}/wp-content/react_images/oliveTree.jpg`,
+  israelMap: `${clientConfig.dbUrl}/wp-content/react_images/israelMap.jpg?v=1`,
+  israelMapMobile: `${clientConfig.dbUrl}/wp-content/react_images/israelMapMobile.jpg?v=2`,
+  oliveTree: `${clientConfig.dbUrl}/wp-content/react_images/oliveTree.jpg?v=1`,
 };
 
 const linksSlice = createSlice({

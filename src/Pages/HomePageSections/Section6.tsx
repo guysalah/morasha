@@ -45,7 +45,7 @@ const Section6: React.FC<section6Props> = ({ pageData, loading }) => {
       <div className={styles.innerContainer}>
         <div className={styles.text}>{text}</div>
         <div className={styles.image}>
-          {isMobile ? <img src={backgroundImageMobile} /> : null}
+          {isMobile ? <img src={backgroundImageMobile} alt="wall" /> : null}
         </div>
       </div>
     </div>

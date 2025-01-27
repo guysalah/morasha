@@ -289,10 +289,10 @@ function MainNavigation() {
   const navItems = (
     <>
       {/* <NavItem closeMenu={handleOnClose} to="/" title="עמוד הבית" /> */}
-      <NavItem closeMenu={handleOnClose} to="/about" title="אדות" />
+      {/* <NavItem closeMenu={handleOnClose} to="/about" title="אדות" /> */}
       <NavItem closeMenu={handleOnClose} to="/hills" title="גבעות" />
       <NavItem closeMenu={handleOnClose} to="/gallery" title="גלריה" />
-      <NavItem closeMenu={handleOnClose} to="/tour-scedual" title="תאום סיור" />
+      {/* <NavItem closeMenu={handleOnClose} to="/tour-scedual" title="תאום סיור" /> */}
       <NavItem closeMenu={handleOnClose} to="/contact" title="צור קשר" />
     </>
   );
@@ -323,6 +323,7 @@ function MainNavigation() {
                 className={classes.logo}
                 style={{ height: isMobile ? "60px" : "40px" }}
                 src={isMobile ? logoVerticalUrl : logoHorizontalUrl}
+                alt="logo"
               />
             </Link>
             {isMobile ? undefined : navItems}

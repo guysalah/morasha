@@ -7,6 +7,7 @@ export const useGetHill = (id: number) => {
 
   const [data, setData] = useState<HillType>({
     acf: {
+      tour_email: "",
       donate_url: "",
       top_image: [],
       about_text: "",
